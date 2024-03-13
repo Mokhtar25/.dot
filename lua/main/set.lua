@@ -32,5 +32,7 @@ vim.opt.updatetime = 50
 vim.opt.ignorecase = true -- ignore case when searching
 vim.opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
-vim.opt.colorcolumn = "80"
+
+-- this is the line the middle of the screen. to indecate that the lines are getting too long
+-- vim.opt.colorcolumn = "80"
 

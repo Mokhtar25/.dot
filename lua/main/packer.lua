@@ -37,23 +37,6 @@ use("tpope/vim-fugitive")
 use("bluz71/vim-nightfly-colors")
 
 use {
-	'VonHeikemen/lsp-zero.nvim',
-	branch = 'v3.x',
-	requires = {
-		--- Uncomment the two plugins below if you want to manage the language servers from neovim
-		{'williamboman/mason.nvim'},
-	        {'williamboman/mason-lspconfig.nvim'},
-
-		-- LSP Support
-		{'neovim/nvim-lspconfig'},
-		-- Autocompletion
-		{'hrsh7th/nvim-cmp'},
-		{'hrsh7th/cmp-nvim-lsp'},
-		{'L3MON4D3/LuaSnip'},
-	}
-}
-
-use {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = function()
@@ -63,11 +46,33 @@ use {
 
 use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 --- autocomplete
+  use("hrsh7th/nvim-cmp")
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
+  -- snippets
+  use({
+	"L3MON4D3/LuaSnip",
+	-- follow latest release.
+	tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	-- install jsregexp (optional!:).
+	run = "make install_jsregexp"
+})
+  use("saadparwaiz1/cmp_luasnip") -- for autocompletion
+  use("rafamadriz/friendly-snippets") -- useful snippets
+  use("onsails/lspkind.nvim")
 -- comment 
   use("numToStr/Comment.nvim")
-
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
+use {
+    "williamboman/mason.nvim"
+}
+use {
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+}
+use ("hrsh7th/cmp-nvim-lsp")
+use ("antosha417/nvim-lsp-file-operations")
 end)
-
-
