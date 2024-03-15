@@ -8,6 +8,8 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+vim.g.user_emmet_leader_key = "<C-Z>"
+
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
@@ -27,6 +29,10 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+
+-- vim.api.nvim_set_hl(0, 'LineNr', { guibg = NONE})
+-- vim.api.nvim_set_hl(0, 'signcolumn', { guibg = NONE })
+-- vim.api.nvim_set_hl(0, 'LineNr', { bg = "none" })
 
 -- search settings
 vim.opt.ignorecase = true -- ignore case when searching
