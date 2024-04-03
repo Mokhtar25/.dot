@@ -7,4 +7,3 @@ vim.api.nvim_set_hl(0, 'LineNr', { guibg = NONE})
 vim.api.nvim_set_hl(0, 'signcolumn', { guibg = NONE})
 
 
-vim.g.user_emmet_leader_key = "<C-Z>"

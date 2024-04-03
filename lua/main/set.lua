@@ -1,5 +1,5 @@
 --vim.opt.guicursor = ""
-
+--
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -12,7 +12,7 @@ vim.g.user_emmet_leader_key = "<C-Z>"
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+-- vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
