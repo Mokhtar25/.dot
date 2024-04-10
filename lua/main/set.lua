@@ -14,6 +14,8 @@ vim.opt.smartindent = true
 
 -- vim.opt.wrap = false
 
+vim.opt.breakindent = true
+
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
@@ -41,4 +43,5 @@ vim.opt.smartcase = true -- if you include mixed case in your search, assumes yo
 
 -- this is the line the middle of the screen. to indecate that the lines are getting too long
 -- vim.opt.colorcolumn = "80"
-
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
