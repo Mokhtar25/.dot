@@ -30,6 +30,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
+vim.opt.iskeyword:append("-")
 vim.opt.updatetime = 50
 
 -- vim.api.nvim_set_hl(0, 'LineNr', { guibg = NONE})
@@ -40,8 +41,7 @@ vim.opt.updatetime = 50
 vim.opt.ignorecase = true -- ignore case when searching
 vim.opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
-
 -- this is the line the middle of the screen. to indecate that the lines are getting too long
 -- vim.opt.colorcolumn = "80"
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
