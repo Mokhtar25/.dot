@@ -10,6 +10,13 @@ local opts = { noremap = true, silent = true }
 local on_attach = function(client, bufnr)
 	opts.buffer = bufnr
 
+	keymap.set("n", "[d", function()
+		vim.diagnostic.goto_prev()
+	end, opts)
+	keymap.set("n", "]d", function()
+		vim.diagnostic.goto_next()
+	end, opts)
+
 	-- set keybinds
 	opts.desc = "Show LSP references"
 	keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
