@@ -33,6 +33,11 @@ vim.opt.isfname:append("@-@")
 vim.opt.iskeyword:append("-")
 vim.opt.updatetime = 50
 
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
+vim.opt.spellcapcheck = ""
+
+-- hello there
 -- vim.api.nvim_set_hl(0, 'LineNr', { guibg = NONE})
 -- vim.api.nvim_set_hl(0, 'signcolumn', { guibg = NONE })
 -- vim.api.nvim_set_hl(0, 'LineNr', { bg = "none" })
