@@ -106,6 +106,13 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
+	use({
+		"barrett-ruth/import-cost.nvim",
+		build = "sh install.sh npm",
+		-- if on windows
+		-- build = 'pwsh install.ps1 yarn',
+		config = true,
+	})
 
 	-- 	use({ "dsznajder/vscode-es7-javascript-react-snippets", run = "yarn install --frozen-lockfile && yarn compile" })
 end)
