@@ -28,6 +28,7 @@ return require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
+
 	use("nvim-treesitter/playground")
 
 	use("ThePrimeagen/harpoon")
@@ -85,7 +86,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	--forrnater
+	--formater
 	use({
 		"stevearc/conform.nvim",
 		config = function()
@@ -106,6 +107,8 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
+
+	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use({
 		"barrett-ruth/import-cost.nvim",
 		build = "sh install.sh npm",

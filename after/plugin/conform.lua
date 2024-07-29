@@ -8,9 +8,9 @@ require("conform").setup({
 		css = { "prettier" },
 		typescript = { "prettier" },
 		-- Use a sub-list to run only the first available formatter
-		javascript = { { "prettier" } },
-		javascriptreact = { { "prettier" } },
-		typescriptreact = { { "prettier" } },
+		javascript = { "prettier" },
+		javascriptreact = { "prettier" },
+		typescriptreact = { "prettier" },
 
 		json = { { "prettier" } },
 	},
