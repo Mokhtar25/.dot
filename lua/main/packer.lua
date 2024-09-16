@@ -7,6 +7,26 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
+	-- use({ "nvim-java/nvim-java" })
+	use({
+		"nvim-java/nvim-java",
+		requires = {
+			"nvim-java/lua-async-await",
+			"nvim-java/nvim-java-core",
+			"nvim-java/nvim-java-test",
+			"nvim-java/nvim-java-dap",
+			"nvim-java/nvim-java-refactor", -- Add this line
+			"MunifTanjim/nui.nvim",
+			"neovim/nvim-lspconfig",
+			"mfussenegger/nvim-dap",
+			{
+				"williamboman/mason.nvim",
+				run = ":MasonUpdate",
+			},
+		},
+	})
+	--
+
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
