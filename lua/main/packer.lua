@@ -6,6 +6,9 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
+	-- copilot
+	use("github/copilot.vim")
+	use("lukas-reineke/indent-blankline.nvim")
 
 	-- use({ "nvim-java/nvim-java" })
 	use({
