@@ -82,9 +82,15 @@ return {
 
     -- Comments
     { "numToStr/Comment.nvim" },
-
-    -- Statusline
     {
+        "folke/ts-comments.nvim",
+        opts = {},
+        event = "VeryLazy",
+        enabled = vim.fn.has("nvim-0.10.0") == 1,
+    },
+
+        -- Statusline
+        {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
     },
