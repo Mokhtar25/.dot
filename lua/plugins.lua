@@ -128,12 +128,6 @@ return {
     -- Context-aware comment string
     { "JoosepAlviste/nvim-ts-context-commentstring" },
 
-    -- Import cost
-    {
-        "barrett-ruth/import-cost.nvim",
-        build = "sh install.sh npm",
-        config = true,
-    },
     {
       "vhyrro/luarocks.nvim",
       priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
