@@ -1,0 +1,6 @@
+-- local ok, java = pcall(require, "java")
+-- if not ok then
+-- 	print("Failed to require java:", java)
+-- else
+-- 	java.setup()
+-- end
