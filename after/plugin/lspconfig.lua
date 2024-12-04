@@ -76,10 +76,10 @@ lspconfig["html"].setup({
 })
 
 -- configure typescript server with plugin
-lspconfig["ts_ls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+-- lspconfig["ts_ls"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
 
 lspconfig["jdtls"].setup({
 	capabilities = capabilities,
