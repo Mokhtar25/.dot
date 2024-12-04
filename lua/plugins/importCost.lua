@@ -1,7 +1,7 @@
 return {
     {
         'barrett-ruth/import-cost.nvim',
-        build = 'sh install.sh npm', -- Use appropriate command for your OS
+        build = 'sh install.sh npm',
         config = function()
             require('import-cost').setup({
                 -- Filetypes to attach to
