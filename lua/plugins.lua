@@ -3,7 +3,7 @@ return {
     { "folke/lazy.nvim" },
     
     -- Copilot
-    { "github/copilot.vim" },
+    -- { "github/copilot.vim" },
 
     -- Indent guides
     { "lukas-reineke/indent-blankline.nvim" },
