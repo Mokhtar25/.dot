@@ -43,6 +43,9 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 keymap.set({"n", "v"}, "<C-Space>", "<cmd> lua vim.lsp.buf.code_action() <CR>")
 
+-- Diagnostics keymap (global, works regardless of LSP attachment)
+keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
+
 --- plugins keymaps--
 
 function EscapePair()

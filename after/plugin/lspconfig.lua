@@ -2,40 +2,30 @@ return{
   'neovim/nvim-lspconfig',
   dependencies = { 'saghen/blink.cmp' },
   opts = {
-
-    -- servers = {
-    --   html = {},
-    --   jdtls = {},
-    --   cssls = {},
-    --   tailwindcss = {},
-    --   prismals = {},
-    --   graphql = {
-    --     filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-    --   },
-    --   emmet_ls = {
-    --     filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-    --   },
-    --   pyright = {},
-    --   gopls = {},
-    --   eslint = {},
-    --   lua_ls = {
-    --     settings = {
-    --       Lua = {
-    --         -- make the language server recognize "vim" global
-    --         diagnostics = {
-    --           globals = { "vim" },
-    --         },
-    --         workspace = {
-    --           -- make language server aware of runtime files
-    --           library = {
-    --             [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-    --             [vim.fn.stdpath("config") .. "/lua"] = true,
-    --           },
-    --         },
-    --       },
-    --     },
-    --   },
-    -- }
+    servers = {
+    html = {},
+    tailwindcss = {},
+    graphql = {
+      filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+    },
+    lua_ls = {
+      settings = {
+        Lua = {
+          -- make the language server recognize "vim" global
+          diagnostics = {
+            globals = { "vim" },
+          },
+          workspace = {
+            -- make language server aware of runtime files
+            library = {
+              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+              [vim.fn.stdpath("config") .. "/lua"] = true,
+            },
+          },
+    },
+    },
+    },
+    }
   },
   config = function(_, opts)
     local lspconfig = require('lspconfig')
@@ -78,7 +68,7 @@ return{
       keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", keymap_opts) -- show  diagnostics for file
 
       keymap_opts.desc = "Show line diagnostics"
-      keymap.set("n", "<leader>d", vim.diagnostic.open_float, keymap_opts) -- show diagnostics for line
+      keymap.set("n", "<leader>d", vm.diagnostic.open_float, keymap_opts) -- show diagnostics for line
 
       keymap_opts.desc = "Go to previous diagnostic"
       keymap.set("n", "[d", vim.diagnostic.goto_prev, keymap_opts) -- jump to previous diagnostic in buffer
@@ -94,11 +84,11 @@ return{
     end
 
     -- Change the Diagnostic symbols in the sign column (gutter)
-    -- local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-    -- for type, icon in pairs(signs) do
-    --   local hl = "DiagnosticSign" .. type
-    --   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    -- end
+    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    end
 
     -- Setup each server with blink.cmp capabilities and on_attach
     for server, config in pairs(opts.servers) do
