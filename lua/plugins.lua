@@ -25,11 +25,11 @@ return {
     },
 
     -- Telescope
-    {
-        "nvim-telescope/telescope.nvim",
-        version = "0.1.5",
-        dependencies = { "nvim-lua/plenary.nvim" },
-    },
+    -- {
+    --     "nvim-telescope/telescope.nvim",
+    --     version = "0.1.5",
+    --     dependencies = { "nvim-lua/plenary.nvim" },
+    -- },
 
     -- Colorscheme: Rose Pine
     {
@@ -66,9 +66,9 @@ return {
     { "christoomey/vim-tmux-navigator" },
 
     -- Autocomplete
-    { "hrsh7th/nvim-cmp" },
-    { "hrsh7th/cmp-buffer" },
-    { "hrsh7th/cmp-path" },
+    -- { "hrsh7th/nvim-cmp" },
+    -- { "hrsh7th/cmp-buffer" },
+    -- { "hrsh7th/cmp-path" },
 
     -- Snippets
     {
@@ -76,9 +76,9 @@ return {
         version = "v2.*",
         build = "make install_jsregexp",
     },
-    { "saadparwaiz1/cmp_luasnip" },
+    -- { "saadparwaiz1/cmp_luasnip" },
     { "rafamadriz/friendly-snippets" },
-    { "onsails/lspkind.nvim" },
+    -- { "onsails/lspkind.nvim" },
 
     -- Comments
     { "numToStr/Comment.nvim" },
@@ -99,7 +99,7 @@ return {
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { "neovim/nvim-lspconfig" },
-    { "hrsh7th/cmp-nvim-lsp" },
+    -- { "hrsh7th/cmp-nvim-lsp" },
     { "antosha417/nvim-lsp-file-operations" },
 
     -- Surround text
