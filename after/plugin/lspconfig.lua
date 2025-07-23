@@ -4,19 +4,19 @@ local keymap = vim.keymap
 
 -- Define servers to set up
 local servers = {
-  html = {},
-  cssls = {},
+  -- html = {},
+  -- cssls = {},
   tailwindcss = {},
-  prismals = {},
+  -- prismals = {},
   graphql = {
     filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
   },
-  emmet_ls = {
-    filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-  },
-  pyright = {},
-  gopls = {},
-  eslint = {},
+  -- emmet_ls = {
+  --   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+  -- },
+  -- pyright = {},
+  -- gopls = {},
+  -- eslint = {},
   clangd = {},
   lua_ls = {
     settings = {
@@ -24,6 +24,8 @@ local servers = {
         -- make the language server recognize "vim" global
         diagnostics = {
           globals = { "vim" },
+           virtual_text = false,
+           virtual_lines = true,
         },
         workspace = {
           -- make language server aware of runtime files
