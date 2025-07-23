@@ -24,8 +24,6 @@ local servers = {
         -- make the language server recognize "vim" global
         diagnostics = {
           globals = { "vim" },
-           virtual_text = false,
-           virtual_lines = true,
         },
         workspace = {
           -- make language server aware of runtime files
@@ -71,10 +69,10 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "<leader>d", vim.diagnostic.open_float, keymap_opts) -- show diagnostics for line
 
   keymap_opts.desc = "Go to previous diagnostic"
-  keymap.set("n", "[d", vim.diagnostic.goto_prev, keymap_opts) -- jump to previous diagnostic in buffer
+  keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end, keymap_opts) -- jump to previous diagnostic in buffer
 
   keymap_opts.desc = "Go to next diagnostic"
-  keymap.set("n", "]d", vim.diagnostic.goto_next, keymap_opts) -- jump to next diagnostic in buffer
+  keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end, keymap_opts) -- jump to next diagnostic in buffer
 
   keymap_opts.desc = "Show documentation for what is under cursor"
   keymap.set("n", "K", vim.lsp.buf.hover, keymap_opts) -- show documentation for what is under cursor
@@ -83,12 +81,17 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "<leader>rs", ":LspRestart<CR>", keymap_opts) -- mapping to restart lsp if necessary
 end
 
--- Change the Diagnostic symbols in the sign column (gutter)
-local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
+-- Configure diagnostic signs using modern API
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = " ",
+      [vim.diagnostic.severity.WARN] = " ",
+      [vim.diagnostic.severity.HINT] = "󰠠 ",
+      [vim.diagnostic.severity.INFO] = " ",
+    }
+  }
+})
 
 -- Setup each server with blink.cmp capabilities and on_attach
 for server, config in pairs(servers) do

@@ -26,6 +26,8 @@ mason_lspconfig.setup({
 		-- "gopls",
 		-- "pyright",
 		"clangd",
+		-- Note: typescript-language-server is NOT included here
+		-- because we use typescript-tools.nvim instead
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
