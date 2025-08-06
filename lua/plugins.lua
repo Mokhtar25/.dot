@@ -112,12 +112,12 @@ return {
     },
 
     -- Formatting
-    {
-        "stevearc/conform.nvim",
-        config = function()
-            require("conform").setup()
-        end,
-    },
+    -- {
+    --     "stevearc/conform.nvim",
+    --     config = function()
+    --         require("conform").setup()
+    --     end,
+    -- },
 
     -- Linting
     { "mfussenegger/nvim-lint" },

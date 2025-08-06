@@ -28,7 +28,7 @@ return{
         'snippet_forward',
         'fallback'
       }},
-      ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+      -- ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
     },
 
     appearance = {
