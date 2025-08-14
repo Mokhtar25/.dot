@@ -1,9 +1,9 @@
 return {
     -- Lazy.nvim can manage itself
     { "folke/lazy.nvim" },
-    
+
     -- Copilot
-    { "github/copilot.vim" },
+    -- { "github/copilot.vim" },
 
     -- Indent guides
     { "lukas-reineke/indent-blankline.nvim" },
@@ -89,8 +89,8 @@ return {
         enabled = vim.fn.has("nvim-0.10.0") == 1,
     },
 
-        -- Statusline
-        {
+    -- Statusline
+    {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
     },
@@ -135,9 +135,8 @@ return {
     { "JoosepAlviste/nvim-ts-context-commentstring" },
 
     {
-      "vhyrro/luarocks.nvim",
-      priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
-      config = true,
-  }
+        "vhyrro/luarocks.nvim",
+        priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+        config = true,
+    }
 }
-
