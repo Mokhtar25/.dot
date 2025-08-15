@@ -2,11 +2,12 @@ return {
     -- Lazy.nvim can manage itself
     { "folke/lazy.nvim" },
 
-    -- Copilot
+    -- Copiot
     -- { "github/copilot.vim" },
 
     -- Indent guides
     { "lukas-reineke/indent-blankline.nvim" },
+
 
     -- Java plugins
     {

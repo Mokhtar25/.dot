@@ -3,11 +3,17 @@ return {
     dependencies = {
         'L3MON4D3/LuaSnip',
         'rafamadriz/friendly-snippets',
+        'Exafunction/codeium.nvim',
     },
     version = '*',
     opts = {
         sources = {
-            priority = { 'lsp', 'path', 'snippets', 'buffer' },
+
+            default = { 'lsp', 'path', 'snippets', 'buffer', 'codeium' },
+            providers = {
+                codeium = { name = 'Codeium', module = 'codeium.blink', async = true },
+            },
+            priority = { 'lsp', 'path', "codeium", 'buffer' }
         },
         fuzzy = { implementation = "prefer_rust_with_warning" },
         keymap = {
