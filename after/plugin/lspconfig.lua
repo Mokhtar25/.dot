@@ -95,10 +95,10 @@ vim.diagnostic.config({
     }
 })
 
--- Setup each server with blink.cmp capabilities and on_attach
-for server, config in pairs(servers) do
-    -- passing config.capabilities to blink.cmp merges with the capabilities
-    config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-    config.on_attach = on_attach
-    lspconfig[server].setup(config)
-end
+-- -- Setup each server with blink.cmp capabilities and on_attach
+-- for server, config in pairs(servers) do
+--     -- passing config.capabilities to blink.cmp merges with the capabilities
+--     config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+--     config.on_attach = on_attach
+--     lspconfig[server].setup(config)
+-- end

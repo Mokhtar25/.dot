@@ -25,17 +25,17 @@ local luasnip = require("luasnip")
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-c>"] = cmp.mapping.abort(), -- close completion window
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
-         ["<Tab>"] = cmp.mapping(
-        function(fallback)
-            if cmp.visible() then
-                cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
-            elseif require("luasnip").expand_or_jumpable() then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-            else
-                fallback()
-            end
-        end, { "i", "s" })
-      }),
+      --    ["<Tab>"] = cmp.mapping(
+      --   function(fallback)
+      --       if cmp.visible() then
+      --           cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
+      --       elseif require("luasnip").expand_or_jumpable() then
+      --           vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+      --       else
+      --           fallback()
+      --       end
+      --   end, { "i", "s" })
+      -- }),
       -- sources for autocompletn
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
