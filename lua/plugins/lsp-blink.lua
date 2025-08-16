@@ -9,7 +9,7 @@ return {
     opts = {
         sources = {
 
-            default = { 'lsp', 'path', 'snippets', 'buffer', 'codeium' },
+            default = { 'lsp', 'path', 'buffer', 'codeium' },
             providers = {
                 codeium = { name = 'Codeium', module = 'codeium.blink', async = true },
             },
