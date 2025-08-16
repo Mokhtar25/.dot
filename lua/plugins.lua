@@ -67,18 +67,21 @@ return {
     { "christoomey/vim-tmux-navigator" },
 
     -- Autocomplete
-    -- { "hrsh7th/nvim-cmp" },
-    -- { "hrsh7th/cmp-buffer" },
-    -- { "hrsh7th/cmp-path" },
-
+    -- { "hrsh7th/cmp-nvim-lsp", },
+    -- { "hrsh7th/cmp-buffer", },
+    -- { "hrsh7th/cmp-path", },
+    -- { "hrsh7th/cmp-cmdline", },
+    -- { "hrsh7th/nvim-cmp", },
+    -- { "saadparwaiz1/cmp_luasnip", },
+    -- { "j-hui/fidget.nvim" },
     -- Snippets
-    {
-        "L3MON4D3/LuaSnip",
-        version = "v2.*",
-        build = "make install_jsregexp",
-    },
+    -- {
+    --     "L3MON4D3/LuaSnip",
+    --     version = "v2.*",
+    --     build = "make install_jsregexp",
+    -- },
     -- { "saadparwaiz1/cmp_luasnip" },
-    { "rafamadriz/friendly-snippets" },
+    -- { "rafamadriz/friendly-snippets" },
     -- { "onsails/lspkind.nvim" },
 
     -- Comments
