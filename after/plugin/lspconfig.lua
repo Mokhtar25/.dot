@@ -1,5 +1,4 @@
 -- LSP Configuration (proper after/plugin structure)
-local lspconfig = require('lspconfig')
 local keymap = vim.keymap
 
 -- Define servers to set up
@@ -99,5 +98,5 @@ for server, config in pairs(servers) do
     -- merge nvim-cmp capabilities with existing config capabilities
     config.capabilities = require("cmp_nvim_lsp").default_capabilities(config.capabilities or {})
     config.on_attach = on_attach
-    require("lspconfig")[server].setup(config)
+    require("lspconfig")[server].setup({ config = config })
 end

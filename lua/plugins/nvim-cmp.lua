@@ -49,8 +49,9 @@ return {
             -- sources for autocompletn
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
-                { name = "luasnip" },
-                { name = "buffer" },
+                { name = "luasnip",          max_item_count = 2 },
+                { name = 'codeium',          max_item_count = 2 },
+                { name = "buffer", },
                 { name = "friendly-snippets" },
                 { name = "path" },
             }),
