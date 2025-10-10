@@ -5,11 +5,22 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
-        "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
         "saadparwaiz1/cmp_luasnip",
         "rafamadriz/friendly-snippets",
+        {
+
+            "L3MON4D3/LuaSnip",
+            keys = {
+                { "<tab>",   false, mode = { "i", "s" } },
+                { "<s-tab>", false, mode = { "i", "s" } },
+            },
+        }
+    },
+    keys = {
+        { "<tab>",   false, mode = { "i", "s" } },
+        { "<s-tab>", false, mode = { "i", "s" } },
     },
     config = function()
         require("luasnip/loaders/from_vscode").lazy_load()
@@ -57,5 +68,8 @@ return {
             }),
         })
     end
+
+
+
 
 }

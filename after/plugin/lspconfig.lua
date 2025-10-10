@@ -86,10 +86,10 @@ end
 vim.diagnostic.config({
     signs = {
         text = {
-            [vim.diagnostic.severity.ERROR] = " ",
-            [vim.diagnostic.severity.WARN] = " ",
+            [vim.diagnostic.severity.ERROR] = "✖",
+            [vim.diagnostic.severity.WARN] = "⚠︎",
             [vim.diagnostic.severity.HINT] = "󰠠 ",
-            [vim.diagnostic.severity.INFO] = " ",
+            [vim.diagnostic.severity.INFO] = "󰋼 ",
         }
     }
 })
@@ -98,5 +98,5 @@ for server, config in pairs(servers) do
     -- merge nvim-cmp capabilities with existing config capabilities
     config.capabilities = require("cmp_nvim_lsp").default_capabilities(config.capabilities or {})
     config.on_attach = on_attach
-    require("lspconfig")[server].setup({ config = config })
+    vim.lsp.config(server, { config = config })
 end
