@@ -14,6 +14,14 @@ return {
 
                     importModuleSpecifierPreference = "non-relative",
                     importModuleSpecifierEnding = "auto",
+
+                    includeInlayParameterNameHints = "all",
+                    includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                    includeInlayFunctionParameterTypeHints = true,
+                    includeInlayVariableTypeHints = true,
+                    includeInlayPropertyDeclarationTypeHints = true,
+                    includeInlayFunctionLikeReturnTypeHints = true,
+                    includeInlayEnumMemberValueHints = true,
                 },
                 -- Prevent duplicate diagnostics
                 tsserver_format_options = {
@@ -25,6 +33,7 @@ return {
             on_attach = function(client, bufnr)
                 local keymap = vim.keymap
                 local keymap_opts = { noremap = true, silent = true, buffer = bufnr }
+                vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
 
                 -- TypeScript-specific keymaps
                 keymap.set({ "n", "v" }, "<leader>ii", "<cmd>TSToolsOrganizeImports<CR>",
