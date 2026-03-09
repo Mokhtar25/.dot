@@ -21,6 +21,8 @@ return {
     keys = {
         { "<tab>",   false, mode = { "i", "s" } },
         { "<s-tab>", false, mode = { "i", "s" } },
+        { "<C-y>",   false, mode = "i" },
+        { "<C-Y>",   false, mode = "i" },
     },
     config = function()
         require("luasnip/loaders/from_vscode").lazy_load()

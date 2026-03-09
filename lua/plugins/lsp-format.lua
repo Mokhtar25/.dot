@@ -20,13 +20,9 @@ return {
                 lua = { "stylua" },
                 python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
                 go = { "gofumpt", "golines", "goimports" },
+
                 sql = { "sqruff" },
-            },
-            format_on_save = {
-                lsp_fallback = true,
-                async = false,
-                timeout_ms = 2000,
-            },
+            }
         })
         vim.api.nvim_create_user_command("Format", function()
             conform.format({
