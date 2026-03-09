@@ -3,13 +3,13 @@ set -e
 
 REPO="https://github.com/Mokhtar25/.dot.git"
 NVIM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvim"
-BRANCH="${1:-main}"
+BRANCH="${1:-remote}"
 
 # Install neovim if missing
 if ! command -v nvim &>/dev/null; then
     echo "Neovim not found. Installing..."
     if command -v apt-get &>/dev/null; then
-        sudo apt-get update && sudo apt-get install -y neovim git
+        sudo apt-get install -y neovim git
     elif command -v dnf &>/dev/null; then
         sudo dnf install -y neovim git
     elif command -v pacman &>/dev/null; then
