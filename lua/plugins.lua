@@ -41,12 +41,14 @@ return {
         end,
     },
 
-    -- Treesitter
+    -- Treesitter (main branch — new API, see after/plugin/treesitter.lua)
     {
         "nvim-treesitter/nvim-treesitter",
+        branch = "main",
+        lazy = false,
         build = ":TSUpdate",
     },
-    { "nvim-treesitter/playground" },
+    -- playground removed: use built-in :InspectTree / :EditQuery
 
     -- Miscellaneous plugins
     { "ThePrimeagen/harpoon" },

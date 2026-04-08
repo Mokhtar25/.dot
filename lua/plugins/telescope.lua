@@ -1,8 +1,8 @@
 return {
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.8',
-        branch = '0.1.x',
+        -- Track master: 0.1.x is unmaintained and calls
+        -- nvim-treesitter.parsers.ft_to_lang which the `main` branch removed.
         dependencies = {
             'nvim-lua/plenary.nvim',
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
