@@ -33,6 +33,12 @@ vim.opt.isfname:append("@-@")
 vim.opt.iskeyword:append("-")
 vim.opt.updatetime = 50
 
+-- Folds: open everything by default (treesitter folds are set per-buffer
+-- in after/plugin/treesitter.lua)
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 3
+vim.opt.foldenable = true
+
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
 vim.opt.spellcapcheck = ""
@@ -44,7 +50,7 @@ vim.opt.spellcapcheck = ""
 
 -- search settings
 vim.opt.ignorecase = true -- ignore case when searching
-vim.opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+vim.opt.smartcase = true  -- if you include mixed case in your search, assumes you want case-sensitive
 
 -- this is the line the middle of the screen. to indecate that the lines are getting too long
 -- vim.opt.colorcolumn = "80"
