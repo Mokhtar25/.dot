@@ -13,6 +13,7 @@ ts.install({
 	"typescript",
 	"tsx",
 	"go",
+	"rust",
 	"python",
 	"html",
 	"css",
