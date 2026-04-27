@@ -73,6 +73,20 @@ local servers = {
     -- gopls = {},
     -- eslint = {},
     clangd = {},
+    pylsp = {
+        root_markers = { "pyproject.toml", ".git", "setup.py", "setup.cfg" },
+        before_init = function(_, config)
+            local root = config.root_dir or vim.fn.getcwd()
+            local venv = root .. "/.venv/bin/python"
+            if vim.fn.executable(venv) == 1 then
+                config.settings = config.settings or {}
+                config.settings.pylsp = config.settings.pylsp or {}
+                config.settings.pylsp.plugins = config.settings.pylsp.plugins or {}
+                config.settings.pylsp.plugins.jedi = { environment = venv }
+            end
+        end,
+        settings = { pylsp = { plugins = { jedi = {} } } },
+    },
     lua_ls = {
         settings = {
             Lua = {
@@ -152,5 +166,6 @@ for server, config in pairs(servers) do
     -- merge nvim-cmp capabilities with existing config capabilities
     config.capabilities = require("cmp_nvim_lsp").default_capabilities(config.capabilities or {})
     config.on_attach = on_attach
-    vim.lsp.config(server, { config = config })
+    vim.lsp.config(server, config)
+    vim.lsp.enable(server)
 end
