@@ -19,6 +19,7 @@ ts.install({
     "html",
     "css",
     "c",
+    "swift",
     "lua",
     "vim",
     "vimdoc",

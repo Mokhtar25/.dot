@@ -73,6 +73,42 @@ local servers = {
     -- gopls = {},
     -- eslint = {},
     clangd = {},
+    sourcekit = {
+        cmd = { "xcrun", "sourcekit-lsp" },
+        filetypes = { "swift" },
+        root_dir = function(bufnr, on_dir)
+            local path = vim.api.nvim_buf_get_name(bufnr)
+            local dir = vim.fs.dirname(path)
+
+            while dir do
+                local entries = vim.fn.readdir(dir)
+                for _, entry in ipairs(entries) do
+                    if entry:match("%.xcodeproj$") or entry:match("%.xcworkspace$") then
+                        on_dir(dir)
+                        return
+                    end
+                end
+
+                local marker = vim.fs.find({
+                    "buildServer.json",
+                    "Package.swift",
+                    "Package.resolved",
+                    "compile_commands.json",
+                    ".git",
+                }, { path = dir, upward = false })[1]
+                if marker then
+                    on_dir(dir)
+                    return
+                end
+
+                local parent = vim.fs.dirname(dir)
+                if parent == dir then
+                    break
+                end
+                dir = parent
+            end
+        end,
+    },
     pylsp = {
         root_markers = { "pyproject.toml", ".git", "setup.py", "setup.cfg" },
         before_init = function(_, config)
